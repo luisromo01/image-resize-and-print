@@ -14,3 +14,6 @@ print(resized_image.size)
 resized_image.show()
 #Source: How to Resize an Image in Python (+ Examples) - Dopinger (https://blog.dopinger.com/how-to-resize-an-image-in-python)
 
+im1 = resized_image.convert('RGB')
+dest = input("Enter location to save")
+im1.save(dest)
