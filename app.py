@@ -7,7 +7,8 @@ import glob
 
 loc = input("Enter file location")
 files = os.listdir(loc)
-images = [Image.open(x) for x in files]
+newfiles = [loc + x for x in files]
+images = [Image.open(x) for x in newfiles]
 total_width = 0
 max_height = 0
 # find the width and height of the final image
