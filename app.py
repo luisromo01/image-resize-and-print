@@ -12,3 +12,5 @@ print(image.size)
 resized_image = image.resize((336,240)) 
 print(resized_image.size)
 
+#Source: How to Resize an Image in Python (+ Examples) - Dopinger (https://blog.dopinger.com/how-to-resize-an-image-in-python)
+
