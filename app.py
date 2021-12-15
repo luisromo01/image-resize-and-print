@@ -9,4 +9,6 @@ loc = input("Enter file location")
 image = Image.open(loc) 
 print(image.size)
 
+resized_image = image.resize((336,240)) 
+print(resized_image.size)
 
