@@ -10,14 +10,27 @@ files = os.listdir(loc)
 images = [Image.open(os.path.join(loc, x)) for x in files]
 total_width = 0
 max_height = 0
+#newimage = images[0].resize(240,336)
 # find the width and height of the final image
 for i in range(len(images)):
     #resize first
-    images[i].resize(240,336)
-    total_width += img.size[0]
-    max_height = max(max_height, img.size[1])
+    images[i] = images[i].resize((240,336))
+    total_width += images[i].size[0]
+    max_height = max(max_height, images[i].size[1])
     
-print(total_width + ', ' + ma_height)
+print(str(total_width) + ', ' + str(max_height))
+
+# create a new image with the appropriate height and width
+new_img = Image.new('RGB', (total_width, max_height))
+# Write the contents of the new image
+current_width = 0
+for img in images:
+  new_img.paste(img, (current_width,0))
+  current_width += img.size[0]
+# Save the image
+new_img.save('NewImage.jpg')
+
+new_img.show()
 
 #resized_image = image.reskze((240,336)) 
 #print(resized_image.size)
