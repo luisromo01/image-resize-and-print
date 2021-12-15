@@ -7,6 +7,11 @@ import glob
 
 loc = input("Enter file location")
 files = os.listdir(loc)
+for i in files:
+    i = os.path.realpath(i)
+    print(i)
+for i in files:
+    print(i)
 images = [Image.open(x) for x in files]
 total_width = 0
 max_height = 0
