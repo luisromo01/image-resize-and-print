@@ -7,18 +7,13 @@ import glob
 
 loc = input("Enter file location")
 files = os.listdir(loc)
-for i in files:
-    i = os.path.realpath(i)
-    print(i)
-for i in files:
-    print(i)
-images = [Image.open(x) for x in files]
+images = [Image.open(os.path.join(loc, x)) for x in files]
 total_width = 0
 max_height = 0
 # find the width and height of the final image
-for img in images:
+for i in range(len(images)):
     #resize first
-    img.resize(240,336)
+    images[i].resize(240,336)
     total_width += img.size[0]
     max_height = max(max_height, img.size[1])
     
