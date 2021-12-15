@@ -7,8 +7,7 @@ import glob
 
 loc = input("Enter file location")
 files = os.listdir(loc)
-newfiles = [loc + x for x in files]
-images = [Image.open(x) for x in newfiles]
+images = [Image.open(x) for x in files]
 total_width = 0
 max_height = 0
 # find the width and height of the final image
@@ -20,7 +19,7 @@ for img in images:
     
 print(total_width + ', ' + ma_height)
 
-#resized_image = image.resize((240,336)) 
+#resized_image = image.reskze((240,336)) 
 #print(resized_image.size)
 #resized_image.show()
 ##Source: How to Resize an Image in Python (+ Examples) - Dopinger (https://blog.dopinger.com/how-to-resize-an-image-in-python)
