@@ -1,5 +1,6 @@
 #3.5 inch = 336 pixels
 #2.5 inch = 240 pixels
+#3 x 1 = 720 wide
 from PIL import Image
 import os
 import PIL
@@ -12,6 +13,7 @@ total_width = 0
 max_height = 0
 #newimage = images[0].resize(240,336)
 # find the width and height of the final image
+threepics = []
 for i in range(len(images)):
     #resize first
     images[i] = images[i].resize((240,336))
