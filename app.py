@@ -29,14 +29,18 @@ new_img = Image.new('RGB', (total_width, max_height))
 # Write the contents of the new image
 current_width = 0
 for img in images:
+  new_img = Image.new('RGB', (total_width, max_height))
   new_img.paste(img, (current_width,0))
   current_width += img.size[0]
   if total_width == 720:
     threepics.append(new_img)
 # Save the image
-new_img.save('NewImage.jpg')
+# new_img.save('NewImage.jpg')
 
-new_img.show()
+threepics[0].show()
+threepics[1].show()
+threepics[0].save('test1.jpg')
+threepics[1].save('test2.jpg')
 
 #resized_image = image.reskze((240,336)) 
 #print(resized_image.size)
