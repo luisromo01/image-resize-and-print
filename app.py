@@ -43,6 +43,24 @@ threepics[0].show()
 threepics[1].show()
 threepics[0].save('test1.jpg')
 threepics[1].save('test2.jpg')
+threepics[2].save('test3.jpg')
+#will now paste vertically
+
+stacked = threepics[0].paste(threepics[1],(total_width, 3* max_height))
+
+current_height = 0
+for img in threepics:
+  stacked.paste(img, (0,current_height))
+  current_height += img.size[1]
+stacked.save('stacked.jpg')
+#  if current_height == 336 * 3:
+#    threepics.append(new_img)
+#    new_img = Image.new('RGB', (total_width, max_height))
+#    print(len(threepics))
+#    current_width = 0
+#
+
+#threepics[0].save('stacked.jpg')
 
 #resized_image = image.reskze((240,336)) 
 #print(resized_image.size)
