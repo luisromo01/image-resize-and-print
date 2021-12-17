@@ -11,8 +11,8 @@ import glob
 loc = input("Enter file location")
 files = os.listdir(loc)
 images = [Image.open(os.path.join(loc, x)) for x in files]
-total_width = 0
-max_height = 0
+total_width = 720 
+max_height = 336 
 #newimage = images[0].resize(240,336)
 # find the width and height of the final image
 threepics = []
