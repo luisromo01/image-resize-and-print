@@ -11,6 +11,7 @@ import glob
 loc = input("Enter file location")
 files = os.listdir(loc)
 images = [Image.open(os.path.join(loc, x)) for x in files]
+std_width = 240
 total_width = 720 
 max_height = 336 
 #newimage = images[0].resize(240,336)
@@ -20,15 +21,14 @@ for i in range(len(images)):
     #resize first
     images[i] = images[i].resize((240,336))
     
-print(str(total_width) + ', ' + str(max_height))
+#print(str(total_width) + ', ' + str(max_height))
 
 # create 3x1 new image with the appropriate height and width
-new_img = Image.new('RGB', (total_width, max_height))
+new_img = Image.new('RGB', (std_width, max_height))
 # Write the contents of the new image
 current_width = 0
 new_img = Image.new('RGB', (total_width, max_height))
 for img in images:
-  new_img = Image.new('RGB', (total_width, max_height))
   new_img.paste(img, (current_width,0))
   current_width += img.size[0]
   if total_width == 720:
