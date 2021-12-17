@@ -28,12 +28,15 @@ print(str(total_width) + ', ' + str(max_height))
 new_img = Image.new('RGB', (total_width, max_height))
 # Write the contents of the new image
 current_width = 0
+new_img = Image.new('RGB', (total_width, max_height))
 for img in images:
   new_img = Image.new('RGB', (total_width, max_height))
   new_img.paste(img, (current_width,0))
   current_width += img.size[0]
   if total_width == 720:
     threepics.append(new_img)
+    new_img = Image.new('RGB', (total_width, max_height))
+    print(len(threepics))
 # Save the image
 # new_img.save('NewImage.jpg')
 
