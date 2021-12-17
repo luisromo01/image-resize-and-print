@@ -31,10 +31,11 @@ new_img = Image.new('RGB', (total_width, max_height))
 for img in images:
   new_img.paste(img, (current_width,0))
   current_width += img.size[0]
-  if total_width == 720:
+  if current_width == 720:
     threepics.append(new_img)
     new_img = Image.new('RGB', (total_width, max_height))
     print(len(threepics))
+    current_width = 0
 # Save the image
 # new_img.save('NewImage.jpg')
 
