@@ -19,8 +19,6 @@ threepics = []
 for i in range(len(images)):
     #resize first
     images[i] = images[i].resize((240,336))
-    total_width += images[i].size[0]
-    max_height = max(max_height, images[i].size[1])
     
 print(str(total_width) + ', ' + str(max_height))
 
