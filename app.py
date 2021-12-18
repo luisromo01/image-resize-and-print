@@ -1,12 +1,16 @@
 #3.5 inch = 336 pixels
 #2.5 inch = 240 pixels
 #3 x 1 = 720 wide
+#Letter WIDTH in Pixels = 816 And HEIGHT in Pixels = 1054 size page pixes wide = 
 #note for incomplete pages. have a 2.5 x3.5 white image. copy it the number\
 #  of times needed to get to 9 then paste those white images so we have 9 pics left
 from PIL import Image
 import os
 import PIL
 import glob
+
+#create blank page
+blank_page = Image.new('RGB', (816, 1054))
 
 loc = input("Enter file location")
 files = os.listdir(loc)
@@ -61,19 +65,3 @@ stacked.save('stacked.jpg')
 #
 
 #threepics[0].save('stacked.jpg')
-
-#resized_image = image.reskze((240,336)) 
-#print(resized_image.size)
-#resized_image.show()
-##Source: How to Resize an Image in Python (+ Examples) - Dopinger (https://blog.dopinger.com/how-to-resize-an-image-in-python)
-#images = [Image.open(x) for x in ['path/to/image1', '/path/to/image2']]
-#total_width = 0
-#max_height = 0
-## find the width and height of the final image
-#for img in images:
-#    total_width += img.size[0]
-#    max_height = max(max_height, img.size[1])
-##turn image into pdf
-#im1 = resized_image.convert('RGB')
-#dest = input("Enter location to save")
-#im1.save(dest)
