@@ -46,8 +46,8 @@ threepics[1].save('test2.jpg')
 threepics[2].save('test3.jpg')
 #will now paste vertically
 
-stacked = threepics[0].paste(threepics[1],(total_width, 3* max_height))
-
+#stacked = threepics[0].paste(threepics[1],(total_width, 3* max_height))
+stacked = Image.new('RGB', (720, 336*3))
 current_height = 0
 for img in threepics:
   stacked.paste(img, (0,current_height))
